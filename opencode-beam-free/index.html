@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nur Toha Mubarak — AI Systems Builder</title>
+<meta name="description" content="Portfolio of Nur Toha Mubarak — AI Systems Builder, Automation & Digital Product Development.">
+<style>
+:root {
+  --bg: #FBF8F2;
+  --ink: #171310;
+  --muted: #5C544D;
+  --accent: #C65B37;
+  --card: #FFFFFF;
+  --border: rgba(23,19,16,0.08);
+  --shadow: 0 1px 2px rgba(23,19,16,0.04), 0 8px 24px rgba(23,19,16,0.06);
+  --radius: 20px;
+  --maxw: 1080px;
+  --mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  --sans: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 17px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+a:focus-visible, button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+.skip-link {
+  position: absolute; left: -9999px; top: 0;
+  background: var(--ink); color: var(--bg);
+  padding: 8px 12px; border-radius: 6px; z-index: 100;
+}
+.skip-link:focus { left: 16px; top: 16px; }
+
+.wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
+
+nav {
+  position: sticky; top: 0; z-index: 10;
+  background: rgba(251,248,242,0.85);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-inner {
+  max-width: var(--maxw); margin: 0 auto; padding: 14px 24px;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 16px;
+}
+.brand { font-weight: 700; letter-spacing: -0.01em; }
+.nav-links { display: flex; gap: 20px; font-size: 15px; color: var(--muted); }
+.nav-links a:hover { color: var(--ink); }
+
+.hero {
+  padding: 72px 0 48px;
+}
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 48px;
+  align-items: center;
+}
+.portrait {
+  width: 100%;
+  max-width: 360px;
+  aspect-ratio: 4 / 4.3;
+  object-fit: cover;
+  object-position: center 12%;
+  border-radius: 24px;
+  box-shadow: var(--shadow);
+}
+.hero h1 {
+  font-size: clamp(40px, 6vw, 64px);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  margin: 0 0 12px;
+  font-weight: 800;
+}
+.positioning {
+  font-size: 18px;
+  color: var(--accent);
+  font-weight: 600;
+  margin: 0 0 16px;
+  letter-spacing: -0.005em;
+}
+.hero-desc {
+  color: var(--muted);
+  max-width: 52ch;
+  margin: 0 0 24px;
+}
+.hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 12px 20px;
+  border-radius: 999px;
+  font-weight: 600; font-size: 15px;
+  border: 1px solid var(--border);
+  transition: transform .15s ease, background .15s ease, color .15s ease;
+}
+.btn-primary {
+  background: var(--ink); color: var(--bg); border-color: var(--ink);
+}
+.btn-primary:hover { background: var(--accent); border-color: var(--accent); transform: translateY(-1px); }
+.btn-ghost:hover { background: rgba(23,19,16,0.04); }
+.rule { height: 1px; width: 48px; background: var(--accent); margin: 0 0 16px; }
+
+section { padding: 56px 0; }
+.section-head {
+  display: flex; align-items: baseline; justify-content: space-between;
+  margin-bottom: 24px; gap: 16px;
+}
+.section-head h2 {
+  font-size: 28px; letter-spacing: -0.02em; margin: 0; font-weight: 700;
+}
+.section-head p { color: var(--muted); margin: 0; font-size: 15px; }
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 28px;
+}
+
+/* Featured project */
+.featured { padding: 0; overflow: hidden; }
+.featured-body { padding: 32px; }
+.featured-grid {
+  display: grid; grid-template-columns: 1.1fr 1fr; gap: 32px; align-items: center;
+}
+.featured h3 {
+  font-size: 32px; letter-spacing: -0.02em; margin: 8px 0 8px; font-weight: 800;
+}
+.tagline {
+  color: var(--accent); font-weight: 600; font-size: 17px; margin: 0 0 12px;
+}
+.featured-desc { color: var(--muted); margin: 0 0 16px; }
+.stack { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 20px; }
+.tag {
+  font-family: var(--mono); font-size: 12px;
+  padding: 4px 10px; border-radius: 999px;
+  background: rgba(23,19,16,0.05); color: var(--ink);
+  border: 1px solid var(--border);
+}
+.links { display: flex; flex-wrap: wrap; gap: 10px; }
+.link-chip {
+  font-size: 14px; font-weight: 600;
+  padding: 8px 14px; border-radius: 999px;
+  border: 1px solid var(--border);
+  transition: background .15s, color .15s;
+}
+.link-chip:hover { background: var(--ink); color: var(--bg); }
+.link-chip.primary { background: var(--accent); color: #fff; border-color: var(--accent); }
+.link-chip.primary:hover { background: var(--ink); border-color: var(--ink); }
+
+/* Diagram */
+.diagram {
+  background: linear-gradient(180deg, #F6F1E8 0%, #FBF8F2 100%);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 24px;
+  font-family: var(--mono); font-size: 13px;
+}
+.diagram .node {
+  background: #fff; border: 1px solid var(--border);
+  border-radius: 12px; padding: 10px 14px;
+  text-align: center; box-shadow: 0 1px 2px rgba(23,19,16,0.03);
+}
+.diagram .node.accent { border-color: var(--accent); color: var(--accent); font-weight: 600; }
+.diagram .row { display: flex; gap: 12px; justify-content: center; align-items: center; flex-wrap: wrap; }
+.diagram .arrow { color: var(--muted); font-size: 18px; }
+.diagram .label { color: var(--muted); font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; margin: 6px 0; text-align: center; }
+
+/* Project grid */
+.grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 24px;
+}
+.project-card {
+  display: flex; flex-direction: column; height: 100%;
+}
+.project-visual {
+  border-radius: 14px; overflow: hidden; margin-bottom: 18px;
+  background: #F0EBE1;
+  aspect-ratio: 16 / 9;
+  display: flex; align-items: center; justify-content: center;
+}
+.project-visual img { width: 100%; height: 100%; object-fit: cover; }
+.project-card h3 { font-size: 22px; margin: 0 0 6px; letter-spacing: -0.015em; font-weight: 700; }
+.project-desc { color: var(--muted); margin: 0 0 14px; font-size: 15px; flex-grow: 1; }
+.project-card .stack { margin: 0 0 16px; }
+.status-line {
+  font-family: var(--mono); font-size: 12px; color: var(--accent);
+  margin: 0 0 14px; font-weight: 600;
+}
+.project-card .links { margin-top: auto; }
+
+/* Kaggle */
+.kaggle-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px;
+}
+.score-card {
+  background: #F6F1E8; border: 1px solid var(--border); border-radius: 14px;
+  padding: 18px 20px;
+}
+.score-card .name { font-size: 14px; color: var(--muted); margin: 0 0 6px; }
+.score-card .score { font-family: var(--mono); font-size: 26px; font-weight: 700; letter-spacing: -0.02em; }
+.disclosure {
+  color: var(--muted); font-size: 14px; margin: 0; padding-top: 4px;
+  border-top: 1px solid var(--border);
+}
+
+/* Experience */
+.exp-list { display: flex; flex-direction: column; gap: 12px; }
+.exp-item {
+  padding: 18px 20px; border: 1px solid var(--border); border-radius: 14px;
+  background: var(--card);
+}
+.exp-item h3 { font-size: 17px; margin: 0 0 2px; font-weight: 700; }
+.exp-meta { color: var(--muted); font-size: 14px; margin: 0 0 6px; }
+.exp-sub { color: var(--muted); font-size: 14px; margin: 0; }
+
+/* Contact */
+.contact { text-align: center; padding: 72px 0 48px; }
+.contact h2 { font-size: 40px; letter-spacing: -0.02em; margin: 0 0 12px; font-weight: 800; }
+.contact p { color: var(--muted); margin: 0 0 24px; }
+.contact-links { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-bottom: 32px; }
+footer {
+  border-top: 1px solid var(--border);
+  padding: 24px 0; color: var(--muted); font-size: 14px;
+  display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-grid { grid-template-columns: 1fr; gap: 28px; }
+  .portrait { max-width: 290px; margin: 0 auto; }
+  .featured-grid { grid-template-columns: 1fr; }
+  .grid { grid-template-columns: 1fr; }
+  .kaggle-grid { grid-template-columns: 1fr; }
+  .hero { padding: 48px 0 32px; }
+  .section-head { flex-direction: column; align-items: flex-start; gap: 4px; }
+}
+@media (max-width: 640px) {
+  .portrait { max-width: 290px; aspect-ratio: 4 / 4.3; object-position: center 12%; }
+  body { font-size: 16px; }
+  .wrap { padding: 0 18px; }
+  .nav-inner { padding: 12px 18px; }
+  .card { padding: 22px; }
+  .featured-body { padding: 22px; }
+}
+@media (max-width: 390px) {
+  .wrap { padding: 0 16px; }
+  html, body { overflow-x: hidden; }
+}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<nav>
+  <div class="nav-inner">
+    <span class="brand">Nur Toha Mubarak</span>
+    <div class="nav-links">
+      <a href="#projects">Projects</a>
+      <a href="#research">Research</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+<main id="main">
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-grid">
+        <img class="portrait" src="portrait.jpg" alt="Portrait of Nur Toha Mubarak">
+        <div>
+          <div class="rule"></div>
+          <h1>Nur Toha Mubarak</h1>
+          <p class="positioning">AI Systems Builder · Automation & Digital Product Development</p>
+          <p class="hero-desc">I build practical software end to end with an AI copilot — from idea and implementation through deployment and submission — exploring intelligent systems and digital products through hands-on experimentation.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#featured">View featured project</a>
+            <a class="btn btn-ghost" href="https://github.com/BaraGitDoodle-bit" target="_blank" rel="noopener noreferrer">GitHub</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="featured">
+    <div class="wrap">
+      <div class="card featured">
+        <div class="featured-body">
+          <div class="featured-grid">
+            <div>
+              <p class="tagline">Stop guessing when to use on-device AI.</p>
+              <h3>NanoOrCloud</h3>
+              <p class="featured-desc">NanoOrCloud runs a task prompt on Gemini Nano and cloud AI side by side, providing per-task routing and a monthly savings projection, with TypeScript and JSON export.</p>
+              <div class="stack">
+                <span class="tag">Vite</span>
+                <span class="tag">React</span>
+                <span class="tag">TypeScript</span>
+                <span class="tag">Firebase AI Logic</span>
+                <span class="tag">Gemini Nano</span>
+              </div>
+              <div class="links">
+                <a class="link-chip primary" href="https://offrecord-4161f.web.app" target="_blank" rel="noopener noreferrer">Live app</a>
+                <a class="link-chip" href="https://github.com/BaraGitDoodle-bit/nanoorcloud" target="_blank" rel="noopener noreferrer">Repository</a>
+                <a class="link-chip" href="https://devpost.com/software/nanoorcloud" target="_blank" rel="noopener noreferrer">Devpost</a>
+                <a class="link-chip" href="https://www.youtube.com/watch?v=FkcT_pua0Qg" target="_blank" rel="noopener noreferrer">Demo video</a>
+              </div>
+            </div>
+            <div class="diagram" aria-label="NanoOrCloud routing flow diagram">
+              <div class="node accent">Task prompt</div>
+              <div class="label">routes to both</div>
+              <div class="row">
+                <div class="node">Gemini Nano<br><span style="color:var(--muted);font-size:11px">on-device</span></div>
+                <div class="arrow">⇄</div>
+                <div class="node">Cloud AI</div>
+              </div>
+              <div class="label">then</div>
+              <div class="node accent">Per-task routing</div>
+              <div class="label">produces</div>
+              <div class="node">Monthly savings projection</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Projects</h2>
+        <p>Selected work.</p>
+      </div>
+      <div class="grid">
+        <article class="card project-card">
+          <div class="project-visual">
+            <img src="drift-thumb.jpg" alt="Gameplay still from the Daily Drift demo">
+          </div>
+          <h3>Daily Drift</h3>
+          <p class="project-desc">A daily text-adventure game built around interactive storytelling on Reddit — a new sector to explore every day.</p>
+          <div class="stack">
+            <span class="tag">Interactive game</span>
+            <span class="tag">Reddit</span>
+            <span class="tag">Text adventure</span>
+          </div>
+          <div class="links">
+            <a class="link-chip" href="https://devpost.com/software/daily-drift" target="_blank" rel="noopener noreferrer">Devpost</a>
+            <a class="link-chip" href="https://www.youtube.com/watch?v=uMGrd2d8CZQ" target="_blank" rel="noopener noreferrer">Demo video</a>
+            <a class="link-chip" href="https://www.reddit.com/r/daily_drift_game/" target="_blank" rel="noopener noreferrer">Subreddit</a>
+          </div>
+        </article>
+
+        <article class="card project-card">
+          <div class="project-visual">
+            <div class="diagram" style="width:100%;border:none;background:transparent;padding:16px;">
+              <div class="node">push 3</div>
+              <div class="label">stack</div>
+              <div class="node">push 2</div>
+              <div class="label">stack</div>
+              <div class="row">
+                <div class="node">add</div>
+                <div class="arrow">→</div>
+                <div class="node accent">result 5</div>
+              </div>
+            </div>
+          </div>
+          <h3>tiny-stack-vm</h3>
+          <p class="project-desc">A tiny stack-based virtual machine interpreter implemented in TypeScript, built without external dependencies.</p>
+          <p class="status-line">Submitted — awaiting grading.</p>
+          <div class="stack">
+            <span class="tag">TypeScript</span>
+            <span class="tag">Interpreter</span>
+            <span class="tag">Zero dependencies</span>
+          </div>
+          <div class="links">
+            <a class="link-chip" href="https://github.com/BaraGitDoodle-bit/tiny-stack-vm" target="_blank" rel="noopener noreferrer">Repository</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="research">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Competition &amp; research</h2>
+        <p>Public scores and disclosure.</p>
+      </div>
+      <div class="card">
+        <p style="margin:0 0 12px;font-weight:600;">Kaggle — dokumenhilang</p>
+        <div class="kaggle-grid">
+          <div class="score-card">
+            <p class="name">Name That LLM</p>
+            <p class="score">0.514</p>
+          </div>
+          <div class="score-card">
+            <p class="name">Squares in Squares</p>
+            <p class="score">27.4888439686</p>
+          </div>
+        </div>
+        <p class="disclosure">Security research: reports submitted through official channels, details withheld per program disclosure policy.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="background">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Experience &amp; education</h2>
+      </div>
+      <div class="exp-list">
+        <div class="exp-item">
+          <h3>HSE Fire Watcher — PT Bina Karya Prima</h3>
+          <p class="exp-meta">Jan 2024 — Present · Kota Bekasi, Indonesia</p>
+          <p class="exp-sub">Employed through PT Bina Cipta Abadi. Fire watch and worksite safety monitoring, supporting safe working procedures.</p>
+        </div>
+        <div class="exp-item">
+          <h3>SMAN 110 Jakarta Utara</h3>
+          <p class="exp-meta">Social Sciences (IPS) · Aug 2018 — May 2021 · Jakarta Utara, Indonesia</p>
+          <p class="exp-sub">Graduated.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <h2>Let's build something.</h2>
+      <p>Reach out for collaboration, opportunities, or just to say hi.</p>
+      <div class="contact-links">
+        <a class="btn btn-primary" href="mailto:tohamubarak110@gmail.com">Email me</a>
+        <a class="btn btn-ghost" href="https://www.linkedin.com/in/nur-toha-mubarak-b8329a280" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a class="btn btn-ghost" href="https://github.com/BaraGitDoodle-bit" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a class="btn btn-ghost" href="https://github.com/theandroidaiarchitect-dev" target="_blank" rel="noopener noreferrer">GitHub (secondary)</a>
+        <a class="btn btn-ghost" href="https://github.com/dokumenhilangid-blip" target="_blank" rel="noopener noreferrer">Research GitHub</a>
+      </div>
+    </div>
+  </section>
+</main>
+<footer>
+  <div class="wrap" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;">
+    <span>© 2026 Nur Toha Mubarak</span>
+    <span>Jakarta Utara, Indonesia</span>
+  </div>
+</footer>
+</body>
+</html>

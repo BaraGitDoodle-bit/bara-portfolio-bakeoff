@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio - Nur Toha Mubarak</title>
+<style>
+  body {
+    background: #FBF8F2;
+    color: #171310;
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    padding: 1rem;
+    max-width: 1080px;
+    margin: 0 auto;
+  }
+  .skip-link {
+    position: absolute;
+    left: -9999px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
+  .hero {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+  }
+  .portrait {
+    max-width: 290px;
+    aspect-ratio: 4/4.3;
+    object-position: top 12%;
+  }
+  .hero-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .name {
+    font-size: 2.5rem;
+    margin: 0;
+  }
+  .positioning {
+    font-size: 1.2rem;
+    color: #C65B37;
+    margin: 0.5rem 0;
+  }
+  .description {
+    font-size: 1rem;
+    margin-top: 1rem;
+  }
+  .hero-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+  .hero-links a {
+    color: #C65B37;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .card {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 20px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .card h2 {
+    font-size: 1.5rem;
+    margin: 0 0 0.5rem;
+    color: #171310;
+  }
+  .card p {
+    margin: 0 0 1rem;
+  }
+  .card .visual {
+    margin: 1rem 0;
+  }
+  .card .links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+  .card .links a {
+    color: #C65B37;
+    text-decoration: none;
+    font-size: 0.9rem;
+  }
+  .status-line {
+    font-size: 0.9rem;
+    color: #555;
+    margin-top: 0.5rem;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+  .contact {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+  .email-button {
+    display: inline-block;
+    background: #C65B37;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .footer {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 3rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e0e0e0;
+  }
+  @media (max-width: 768px) {
+    .hero {
+      flex-direction: column;
+      text-align: center;
+    }
+    .hero-text {
+      margin-top: 1rem;
+    }
+  }
+  @media (max-width: 390px) {
+    .portrait {
+      max-width: 200px;
+    }
+  }
+</style>
+</head>
+<body>
+<a href="#main" class="skip-link">Skip to main content</a>
+<main>
+  <!-- Hero -->
+  <section class="hero">
+    <img src="portrait.jpg" alt="Portrait of Nur Toha Mubarak" class="portrait">
+    <div class="hero-text">
+      <h1 class="name">Nur Toha Mubarak</h1>
+      <p class="positioning">AI Systems Builder · Automation & Digital Product Development</p>
+      <p class="description">I build practical software end to end with an AI copilot — from idea and implementation through deployment and submission — exploring intelligent systems and digital products through hands‑on experimentation.</p>
+      <div class="hero-links">
+        <a href="https://offrecord-4161f.web.app" target="_blank" rel="noopener noreferrer">NanoOrCloud Live</a>
+        <a href="https://github.com/BaraGitDoodle-bit" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Project -->
+  <section>
+    <article class="card">
+      <h2>NanoOrCloud</h2>
+      <p class="tagline">Stop guessing when to use on-device AI.</p>
+      <p class="description">NanoOrCloud runs a task prompt on Gemini Nano and cloud AI side by side, providing per-task routing and a monthly savings projection, with TypeScript and JSON export.</p>
+      <div class="visual">
+        <svg viewBox="0 0 300 150" class="diagram">
+          <defs>
+            <marker id="arrow" markerWidth="10" markerHeight="10" refX="0" refY="3" orient="auto"><path d="M0,0 L0,6 L10,3 z" fill="#171310"/></marker>
+          </defs>
+          <rect x="10" y="40" width="80" height="40" rx="8" fill="#C65B37"><text x="50" y="65" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#fff">Gemini Nano</text></rect>
+          <path d="M90 70 L110 70" stroke="#171310" stroke-width="2" marker-end="url(#arrow)"/>
+          <rect x="130" y="40" width="80" height="40" rx="8" fill="#171310"><text x="170" y="65" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#fff">Cloud AI</text></rect>
+          <text x="150" y="110" text-anchor="middle" font-family="Inter, sans-serif" font-size="9">Monthly savings projection</text>
+        </svg>
+      </div>
+      <div class="links">
+        <a href="https://offrecord-4161f.web.app" target="_blank" rel="noopener noreferrer">Live App</a>
+        <a href="https://github.com/BaraGitDoodle-bit/nanoorcloud" target="_blank" rel="noopener noreferrer">Repository</a>
+        <a href="https://devpost.com/software/nanoorcloud" target="_blank" rel="noopener noreferrer">Devpost</a>
+        <a href="https://www.youtube.com/watch?v=FkcT_pua0Qg" target="_blank" rel="noopener noreferrer">Demo Video</a>
+      </div>
+    </article>
+  </section>
+
+  <!-- Project Grid -->
+  <section class="grid">
+    <article class="card">
+      <h2>Daily Drift</h2>
+      <p class="description">A daily text‑adventure game built around interactive storytelling on Reddit — a new sector to explore every day.</p>
+      <div class="visual">
+        <img src="drift-thumb.jpg" alt="Gameplay still from Daily Drift" class="thumb">
+      </div>
+      <div class="links">
+        <a href="https://devpost.com/software/daily-drift" target="_blank" rel="noopener noreferrer">Devpost</a>
+        <a href="https://www.youtube.com/watch?v=uMGrd2d8CZQ" target="_blank" rel="noopener noreferrer">Demo Video</a>
+        <a href="https://www.reddit.com/r/daily_drift_game/" target="_blank" rel="noopener noreferrer">Subreddit</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <h2>tiny-stack-vm</h2>
+      <p class="description">A tiny stack‑based virtual machine interpreter implemented in TypeScript, built without external dependencies.</p>
+      <div class="visual">
+        <svg viewBox="0 0 200 80" class="diagram">
+          <rect x="10" y="20" width="40" height="30" rx="5" fill="#C65B37"><text x="30" y="35" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#fff">push 3</text></rect>
+          <rect x="60" y="20" width="40" height="30" rx="5" fill="#171310"><text x="60" y="35" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#fff">push 2</text></rect>
+          <path d="M50 50 L70 50" stroke="#171310" stroke-width="2"/>
+          <rect x="100" y="20" width="40" height="30" rx="5" fill="#C65B37"><text x="120" y="35" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#fff">result 5</text></rect>
+        </svg>
+      </div>
+      <p class="status-line">Submitted — awaiting grading.</p>
+      <div class="links">
+        <a href="https://github.com/BaraGitDoodle-bit/tiny-stack-vm" target="_blank" rel="noopener noreferrer">Repository</a>
+      </div>
+    </article>
+  </section>
+
+  <!-- Competition & Research -->
+  <section class="card">
+    <h2>Kaggle</h2>
+    <p>Name That LLM — 0.514; Squares in Squares — 27.4888439686</p>
+    <p class="disclosure">Security research: reports submitted through official channels, details withheld per program disclosure policy.</p>
+  </section>
+
+  <!-- Experience -->
+  <section class="card">
+    <h2>Experience</h2>
+    <p><strong>HSE Fire Watcher</strong> — PT Bina Karya Prima, Jan 2024 — Present, Kota Bekasi, Indonesia.<br>
+    <span class="subline">Employed through PT Bina Cipta Abadi. Fire watch and worksite safety monitoring, supporting safe working procedures.</span></p>
+  </section>
+
+  <!-- Education -->
+  <section class="card">
+    <h2>Education</h2>
+    <p><strong>SMAN 110 Jakarta Utara</strong> — Social Sciences (IPS), Aug 2018 — May 2021, Jakarta Utara, Indonesia.<br>
+    <span class="subline">Graduated.</span></p>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact">
+    <h2>Contact</h2>
+    <a href="mailto:tohamubarak110@gmail.com" class="email-button">Email Me</a>
+    <div class="links">
+      <a href="https://www.linkedin.com/in/nur-toha-mubarak-b8329a280" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href="https://github.com/BaraGitDoodle-bit" target="_blank" rel="noopener noreferrer">GitHub (primary)</a>
+      <a href="https://github.com/theandroidaiarchitect-dev" target="_blank" rel="noopener noreferrer">GitHub (secondary)</a>
+      <a href="https://github.com/dokumenhilangid-blip" target="_blank" rel="noopener noreferrer">Research</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2026 Nur Toha Mubarak</p>
+  </footer>
+</main>
+</body>
+</html>

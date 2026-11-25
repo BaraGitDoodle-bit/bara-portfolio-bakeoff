@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nur Toha Mubarak — AI Systems Builder</title>
+<meta name="description" content="Nur Toha Mubarak — AI Systems Builder, automation and digital product development. Based in Jakarta Utara, Indonesia.">
+<style>
+  :root {
+    --bg: #FBF8F2;
+    --ink: #171310;
+    --muted: #5d554c;
+    --line: #e7e0d5;
+    --accent: #C65B37;
+    --card: #ffffff;
+    --radius: 20px;
+    --shadow: 0 1px 2px rgba(23,19,16,.04), 0 12px 32px rgba(23,19,16,.06);
+    --maxw: 1080px;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 17px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1, h2, h3 { line-height: 1.15; letter-spacing: -0.02em; margin: 0; }
+
+  a { color: inherit; }
+
+  img { display: block; max-width: 100%; }
+
+  .wrap {
+    width: 100%;
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  /* Skip link */
+  .skip {
+    position: absolute;
+    left: 12px;
+    top: -60px;
+    background: var(--ink);
+    color: #fff;
+    padding: 10px 16px;
+    border-radius: 10px;
+    z-index: 100;
+    transition: top .15s ease;
+  }
+  .skip:focus { top: 12px; }
+
+  /* Focus visibility */
+  a:focus-visible,
+  button:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+
+  /* Type helpers */
+  .mono {
+    font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  }
+
+  .eyebrow {
+    font-size: 0.8rem;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 600;
+  }
+
+  /* Buttons / links */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 999px;
+    border: 1px solid var(--line);
+    background: var(--card);
+    color: var(--ink);
+    transition: border-color .15s ease, color .15s ease, transform .15s ease;
+  }
+  .btn:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-1px); }
+
+  .btn-primary {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #fff;
+  }
+  .btn-primary:hover { background: #b34f2d; border-color: #b34f2d; color: #fff; }
+
+  .link-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    padding: 56px 0 40px;
+  }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 32px;
+    align-items: center;
+  }
+  .portrait {
+    width: 100%;
+    max-width: 290px;
+    aspect-ratio: 4 / 4.3;
+    object-fit: cover;
+    object-position: center 12%;
+    border-radius: var(--radius);
+    border: 1px solid var(--line);
+    box-shadow: var(--shadow);
+    margin: 0 auto;
+  }
+  .hero h1 {
+    font-size: clamp(2.1rem, 6vw, 3.2rem);
+    font-weight: 800;
+  }
+  .role {
+    margin-top: 10px;
+    font-weight: 600;
+    font-size: 1.05rem;
+    color: var(--accent);
+  }
+  .lede {
+    margin: 18px 0 0;
+    color: var(--muted);
+    font-size: 1.05rem;
+    max-width: 60ch;
+  }
+  .hero-links { margin-top: 26px; }
+
+  /* ---------- Sections ---------- */
+  section { padding: 28px 0; }
+  .section-head { margin-bottom: 20px; }
+  .section-head h2 { font-size: clamp(1.5rem, 4vw, 2rem); font-weight: 700; }
+
+  /* Cards */
+  .card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Featured */
+  .featured { padding-top: 12px; }
+  .featured .card { padding: clamp(24px, 4vw, 40px); }
+  .featured h3 { font-size: clamp(1.6rem, 4vw, 2.2rem); font-weight: 800; margin-top: 6px; }
+  .tagline { color: var(--ink); font-weight: 600; margin: 10px 0 0; }
+  .featured p.desc { color: var(--muted); margin: 14px 0 0; max-width: 62ch; }
+
+  .stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 18px 0 0;
+    padding: 0;
+    list-style: none;
+  }
+  .stack li {
+    font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 0.78rem;
+    color: var(--ink);
+    background: #f4efe6;
+    border: 1px solid var(--line);
+    padding: 5px 10px;
+    border-radius: 8px;
+  }
+
+  .diagram {
+    margin-top: 26px;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    background: #fbf8f2;
+    padding: 22px;
+  }
+  .diagram-title {
+    font-size: 0.78rem;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 600;
+    margin-bottom: 16px;
+  }
+  .flow {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .flow-node {
+    border: 1px solid var(--line);
+    background: #fff;
+    border-radius: 12px;
+    padding: 14px 16px;
+  }
+  .flow-node .k {
+    font-size: 0.72rem;
+    letter-spacing: .05em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 600;
+  }
+  .flow-node .v {
+    font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 0.9rem;
+    margin-top: 4px;
+  }
+  .flow-arrow {
+    text-align: center;
+    color: var(--accent);
+    font-size: 1.1rem;
+    line-height: 1;
+  }
+  .branch {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .branch .flow-node.on-device { border-color: #d9c7b8; }
+  .branch .flow-node.cloud { border-color: #d9c7b8; }
+
+  /* Project grid */
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .grid-2 > .card { height: 100%; }
+  .card h3 { font-size: 1.35rem; font-weight: 700; }
+  .card p.desc { color: var(--muted); margin: 12px 0 0; }
+  .card .thumb {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: 14px;
+    border: 1px solid var(--line);
+    margin-bottom: 18px;
+  }
+  .status-line {
+    margin-top: 14px;
+    font-size: 0.9rem;
+    color: var(--muted);
+  }
+  .spacer { flex: 1 1 auto; }
+  .card .link-row { margin-top: 22px; padding-top: 18px; border-top: 1px solid var(--line); }
+
+  /* tiny-stack-vm diagram */
+  .vm {
+    margin-top: 18px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 0.82rem;
+  }
+  .vm .op {
+    border: 1px solid var(--line);
+    background: #fbf8f2;
+    border-radius: 8px;
+    padding: 6px 10px;
+  }
+  .vm .op.result { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .vm .arr { color: var(--muted); }
+
+  /* Kaggle */
+  .scores {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 14px;
+    margin-top: 18px;
+  }
+  .score {
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 16px 18px;
+    background: #fbf8f2;
+  }
+  .score .name { font-weight: 600; }
+  .score .val {
+    font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-top: 6px;
+  }
+  .disclosure {
+    margin-top: 16px;
+    color: var(--muted);
+    font-size: 0.92rem;
+  }
+
+  /* Experience & education */
+  .timeline {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-top: 6px;
+  }
+  .entry {
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    background: var(--card);
+    padding: 18px 20px;
+  }
+  .entry .top {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 6px 16px;
+    align-items: baseline;
+  }
+  .entry .title { font-weight: 700; }
+  .entry .when {
+    font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 0.78rem;
+    color: var(--muted);
+  }
+  .entry .org { color: var(--accent); font-weight: 600; font-size: 0.92rem; margin-top: 2px; }
+  .entry .sub { color: var(--muted); font-size: 0.92rem; margin: 8px 0 0; }
+
+  /* Contact */
+  .contact { padding: 40px 0 24px; }
+  .contact h2 { font-size: clamp(1.8rem, 5vw, 2.6rem); font-weight: 800; max-width: 18ch; }
+  .contact .sub { color: var(--muted); margin: 14px 0 0; }
+  .contact-actions { margin-top: 26px; }
+
+  footer {
+    border-top: 1px solid var(--line);
+    padding: 24px 0 40px;
+    margin-top: 8px;
+    color: var(--muted);
+    font-size: 0.88rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 18px;
+    justify-content: space-between;
+  }
+  footer a { color: var(--muted); text-decoration: none; }
+  footer a:hover { color: var(--accent); }
+
+  /* ---------- Responsive ---------- */
+  @media (min-width: 720px) {
+    .hero { padding: 72px 0 48px; }
+    .hero-grid { grid-template-columns: 1.25fr 0.75fr; gap: 48px; }
+    .portrait { margin: 0; }
+    .grid-2 { grid-template-columns: 1fr 1fr; }
+    .flow { grid-template-columns: 1fr auto 1fr auto 1fr; align-items: stretch; }
+    .flow-arrow { align-self: center; }
+    .branch { grid-template-columns: 1fr 1fr; }
+    .scores { grid-template-columns: 1fr 1fr; }
+    .timeline { grid-template-columns: 1fr 1fr; }
+  }
+
+  @media (min-width: 960px) {
+    .flow { grid-template-columns: 1fr auto 1.4fr auto 1fr; }
+  }
+
+  @media (max-width: 380px) {
+    body { font-size: 16px; }
+    .wrap { padding: 0 16px; }
+    .card { padding: 22px; }
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<div class="wrap">
+
+  <!-- Hero -->
+  <header class="hero">
+    <div class="hero-grid">
+      <div>
+        <p class="eyebrow">Jakarta Utara, Indonesia</p>
+        <h1>Nur Toha Mubarak</h1>
+        <p class="role">AI Systems Builder · Automation &amp; Digital Product Development</p>
+        <p class="lede">I build practical software end to end with an AI copilot — from idea and implementation through deployment and submission — exploring intelligent systems and digital products through hands-on experimentation.</p>
+        <div class="hero-links link-row">
+          <a class="btn btn-primary" href="#nanoorcloud">Featured project</a>
+          <a class="btn" href="https://github.com/BaraGitDoodle-bit" target="_blank" rel="noopener noreferrer">GitHub
+            <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </div>
+      <img class="portrait" src="portrait.jpg" alt="Portrait of Nur Toha Mubarak" width="720" height="720">
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- Featured project -->
+    <section class="featured" id="nanoorcloud" aria-labelledby="featured-h">
+      <div class="card">
+        <p class="eyebrow">Featured project</p>
+        <h3 id="featured-h">NanoOrCloud</h3>
+        <p class="tagline">Stop guessing when to use on-device AI.</p>
+        <p class="desc">NanoOrCloud runs a task prompt on Gemini Nano and cloud AI side by side, providing per-task routing and a monthly savings projection, with TypeScript and JSON export.</p>
+
+        <ul class="stack" aria-label="Technology stack">
+          <li>Vite</li>
+          <li>React</li>
+          <li>TypeScript</li>
+          <li>Firebase AI Logic</li>
+          <li>Gemini Nano</li>
+        </ul>
+
+        <div class="diagram" role="img" aria-label="Routing flow diagram: a task prompt runs on Gemini Nano on-device and Cloud AI side by side, then per-task routing produces a monthly savings projection.">
+          <p class="diagram-title">Routing flow</p>
+          <div class="flow">
+            <div class="flow-node">
+              <div class="k">Input</div>
+              <div class="v">task prompt</div>
+            </div>
+            <div class="flow-arrow" aria-hidden="true">→</div>
+            <div class="branch">
+              <div class="flow-node on-device">
+                <div class="k">On-device</div>
+                <div class="v">Gemini Nano</div>
+              </div>
+              <div class="flow-node cloud">
+                <div class="k">Cloud</div>
+                <div class="v">Cloud AI</div>
+              </div>
+            </div>
+            <div class="flow-arrow" aria-hidden="true">→</div>
+            <div class="flow-node">
+              <div class="k">Output</div>
+              <div class="v">per-task routing · monthly savings projection</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="link-row" style="margin-top:24px;">
+          <a class="btn btn-primary" href="https://offrecord-4161f.web.app" target="_blank" rel="noopener noreferrer">Live application <span aria-hidden="true">↗</span></a>
+          <a class="btn" href="https://github.com/BaraGitDoodle-bit/nanoorcloud" target="_blank" rel="noopener noreferrer">Repository <span aria-hidden="true">↗</span></a>
+          <a class="btn" href="https://devpost.com/software/nanoorcloud" target="_blank" rel="noopener noreferrer">Devpost <span aria-hidden="true">↗</span></a>
+          <a class="btn" href="https://www.youtube.com/watch?v=FkcT_pua0Qg" target="_blank" rel="noopener noreferrer">Demo video <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Project grid -->
+    <section aria-labelledby="projects-h">
+      <div class="section-head">
+        <h2 id="projects-h">Projects</h2>
+      </div>
+      <div class="grid-2">
+
+        <!-- Daily Drift -->
+        <article class="card">
+          <img class="thumb" src="drift-thumb.jpg" alt="Gameplay still from the Daily Drift text-adventure game" width="1280" height="720">
+          <h3>Daily Drift</h3>
+          <p class="desc">A daily text-adventure game built around interactive storytelling on Reddit — a new sector to explore every day.</p>
+          <ul class="stack" aria-label="Technology stack">
+            <li>Interactive game</li>
+            <li>Reddit</li>
+            <li>Text adventure</li>
+          </ul>
+          <div class="spacer"></div>
+          <div class="link-row">
+            <a class="btn" href="https://devpost.com/software/daily-drift" target="_blank" rel="noopener noreferrer">Devpost <span aria-hidden="true">↗</span></a>
+            <a class="btn" href="https://www.youtube.com/watch?v=uMGrd2d8CZQ" target="_blank" rel="noopener noreferrer">Demo video <span aria-hidden="true">↗</span></a>
+            <a class="btn" href="https://www.reddit.com/r/daily_drift_game/" target="_blank" rel="noopener noreferrer">Subreddit <span aria-hidden="true">↗</span></a>
+          </div>
+        </article>
+
+        <!-- tiny-stack-vm -->
+        <article class="card">
+          <h3>tiny-stack-vm</h3>
+          <p class="desc">A tiny stack-based virtual machine interpreter implemented in TypeScript, built without external dependencies.</p>
+          <ul class="stack" aria-label="Technology stack">
+            <li>TypeScript</li>
+            <li>Interpreter</li>
+            <li>Zero dependencies</li>
+          </ul>
+
+          <div class="vm" role="img" aria-label="Stack machine flow: push 3, push 2, add, result 5.">
+            <span class="op">push 3</span>
+            <span class="arr" aria-hidden="true">→</span>
+            <span class="op">push 2</span>
+            <span class="arr" aria-hidden="true">→</span>
+            <span class="op">add</span>
+            <span class="arr" aria-hidden="true">→</span>
+            <span class="op result">result 5</span>
+          </div>
+
+          <p class="status-line">Submitted — awaiting grading.</p>
+          <div class="spacer"></div>
+          <div class="link-row">
+            <a class="btn" href="https://github.com/BaraGitDoodle-bit/tiny-stack-vm" target="_blank" rel="noopener noreferrer">Repository <span aria-hidden="true">↗</span></a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Competition & research -->
+    <section aria-labelledby="comp-h">
+      <div class="section-head">
+        <h2 id="comp-h">Competition &amp; research</h2>
+      </div>
+      <div class="card">
+        <p class="eyebrow">Kaggle · dokumenhilang</p>
+        <div class="scores">
+          <div class="score">
+            <div class="name">Name That LLM</div>
+            <div class="val">0.514</div>
+          </div>
+          <div class="score">
+            <div class="name">Squares in Squares</div>
+            <div class="val">27.4888439686</div>
+          </div>
+        </div>
+        <p class="disclosure">Security research: reports submitted through official channels, details withheld per program disclosure policy.</p>
+      </div>
+    </section>
+
+    <!-- Experience & education -->
+    <section aria-labelledby="exp-h">
+      <div class="section-head">
+        <h2 id="exp-h">Experience &amp; education</h2>
+      </div>
+      <div class="timeline">
+        <div class="entry">
+          <div class="top">
+            <span class="title">HSE Fire Watcher</span>
+            <span class="when">Jan 2024 — Present</span>
+          </div>
+          <div class="org">PT Bina Karya Prima · Kota Bekasi, Indonesia</div>
+          <p class="sub">Employed through PT Bina Cipta Abadi. Fire watch and worksite safety monitoring, supporting safe working procedures.</p>
+        </div>
+        <div class="entry">
+          <div class="top">
+            <span class="title">SMAN 110 Jakarta Utara</span>
+            <span class="when">Aug 2018 — May 2021</span>
+          </div>
+          <div class="org">Social Sciences (IPS) · Jakarta Utara, Indonesia</div>
+          <p class="sub">Graduated.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Contact -->
+  <section class="contact" aria-labelledby="contact-h">
+    <h2 id="contact-h">Let’s build something practical.</h2>
+    <p class="sub">Reach me by email or find me on the profiles below.</p>
+    <div class="contact-actions link-row">
+      <a class="btn btn-primary" href="mailto:tohamubarak110@gmail.com">tohamubarak110@gmail.com</a>
+      <a class="btn" href="https://www.linkedin.com/in/nur-toha-mubarak-b8329a280" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
+      <a class="btn" href="https://github.com/BaraGitDoodle-bit" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+      <a class="btn" href="https://github.com/theandroidaiarchitect-dev" target="_blank" rel="noopener noreferrer">GitHub (secondary) <span aria-hidden="true">↗</span></a>
+      <a class="btn" href="https://github.com/dokumenhilangid-blip" target="_blank" rel="noopener noreferrer">GitHub (research) <span aria-hidden="true">↗</span></a>
+    </div>
+  </section>
+
+  <footer>
+    <span>© 2026 Nur Toha Mubarak</span>
+    <span>Jakarta Utara, Indonesia</span>
+  </footer>
+
+</div>
+</body>
+</html>

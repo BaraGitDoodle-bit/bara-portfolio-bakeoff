@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Portfolio bake-off — 21 free models, 13 builds</title>
+<meta name="description" content="One portfolio build per free opencode CLI model, from the same brief. Experiments, not the live site.">
+<style>
+  :root { --ivory:#FBF8F2; --ink:#171310; --accent:#C65B37; --line:#E6DFD3; --muted:#5F574D; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--ivory); color:var(--ink); font-family:"Inter",-apple-system,"Segoe UI",sans-serif; font-size:17px; line-height:1.6; }
+  .wrap { max-width:860px; margin:0 auto; padding:0 22px; }
+  header { padding:56px 0 8px; }
+  h1 { font-size:clamp(1.8rem,4vw,2.4rem); letter-spacing:-0.02em; margin:0 0 10px; }
+  .lede { color:var(--muted); max-width:60ch; margin:0 0 8px; }
+  .mono { font-family:"JetBrains Mono",ui-monospace,monospace; font-size:13.5px; }
+  h2 { font-size:1.3rem; margin:44px 0 4px; }
+  .sub { color:var(--muted); margin:0 0 18px; font-size:15.5px; }
+  .card { background:#fff; border:1px solid var(--line); border-radius:16px; padding:20px 22px; margin:0 0 14px; }
+  .card h3 { margin:0 0 4px; font-size:1.1rem; }
+  .card p { margin:0 0 12px; color:var(--muted); font-size:15px; }
+  .card .meta { font-family:"JetBrains Mono",ui-monospace,monospace; font-size:12.5px; color:var(--muted); margin:0 0 12px; }
+  .card a.open { color:var(--accent); font-weight:600; text-decoration:none; }
+  .card a.open:hover { text-decoration:underline; }
+  .note { border-left:3px solid var(--accent); padding:2px 0 2px 12px; color:var(--muted); font-size:15px; margin:0 0 12px; }
+  ul.fail { padding-left:20px; color:var(--muted); }
+  ul.fail li { margin:0 0 8px; }
+  footer { padding:36px 0 48px; color:var(--muted); font-size:14px; }
+  footer a { color:inherit; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>Portfolio bake-off</h1>
+    <p class="lede">The same portfolio brief, built once by each free model in the opencode CLI (25–26 Nov 2026). Thinking effort set to the highest each model supports (<span class="mono">#high</span> variant where accepted, plain model otherwise). Every output below was checked: valid HTML, no invented facts, no phone number, no placeholder text. These are experiments — the live site is untouched.</p>
+    <p class="lede">Live site: <a href="https://BaraGitDoodle-bit.github.io/bara-portfolio/">bara-portfolio</a></p>
+  </header>
+
+  <h2>Builds (13)</h2>
+  <p class="sub">One folder per model. Click through and compare.</p>
+
+  <div class="card">
+    <h3>1. opencode / beam-free</h3>
+    <p class="meta">spec: opencode/beam-free#high · 17,566 bytes · 84s · all checks pass</p>
+    <a class="open" href="opencode-beam-free/">Open build →</a>
+  </div>
+
+  <div class="card">
+    <h3>2. opencode / deepseek-v4.1-flash-free</h3>
+    <p class="meta">spec: opencode/deepseek-v4.1-flash-free#high · 27,393 bytes · 1,087s · all checks pass · 12 media queries (most responsive)</p>
+    <a class="open" href="opencode-deepseek-v4.1-flash-free/">Open build →</a>
+  </div>
+
+  <div class="card">
+    <h3>3. opencode / flint-40b-free</h3>
+    <p class="meta">spec: opencode/flint-40b-free#high · 17,145 bytes · 1,307s · all checks pass</p>
+    <a class="open" href="opencode-flint-40b-free/">Open build →</a>
+  </div>
+
+  <div class="card">
+    <h3>4. opencode / hy4-flash-free</h3>
+    <p class="meta">spec: opencode/hy4-flash-free#high · 18,865 bytes · 190s · all checks pass</p>
+    <a class="open" href="opencode-hy4-flash-free/">Open build →</a>
+  </div>
+
+  <div class="card">
+    <h3>5. opencode / iceman-free</h3>
+    <p class="meta">spec: opencode/iceman-free (plain — #high variant rejected) · 34,765 bytes · 174s · all checks pass · largest file, 10 SVG diagrams</p>
+    <a class="open" href="opencode-iceman-free/">Open build →</a>
+  </div>
+
+  <div class="card">
+    <h3>6. opencode / mimo-v2.6-flash-free</h3>
+    <p class="meta">spec: opencode/mimo-v2.6-flash-free (plain — #high variant rejected) · 19,902 bytes · 926s · all checks pass</p>
+    <a class="open" href="opencode-mimo-v2.6-flash-free/">Open build →</a>
+  </div>
+
+  <div class="card">
+    <h3>7. opencode / nemotron-3.5-lightning-free</h3>
+    <p class="meta">spec: opencode/nemotron-3.5-lightning-free (plain — #high variant rejected) · 25,795 bytes · 222s · all checks pass</p>
+    <p class="note">Quality note: this build has no @media queries, so its mobile layout is untested by its own CSS.</p>
+    <a class="open" href="opencode-nemotron-3.5-lightning-free/">Open build →</a>
+  </div>
+
+  <div class="card">
+    <h3>8. opencode / nemotron-3.5-super-vl-free</h3>
+    <p class="meta">spec: opencode/nemotron-3.5-super-vl-free#high · 15,271 bytes · 311s · all checks pass</p>
+    <a class="open" href="opencode-nemotron-3.5-super-vl-free/">Open build →</a>
+  </div>
+
+  <div class="card">
+    <h3>9. opencode / tidepool-alpha-free</h3>
+    <p class="meta">spec: opencode/tidepool-alpha-free#high · 12,826 bytes · 478s · all checks pass after one fix</p>
+    <p class="note">Fix applied before publishing: the model spelled the name “Mubārak” (4×); corrected to “Mubarak”. Nothing else changed.</p>
+    <a class="open" href="opencode-tidepool-alpha-free/">Open build →</a>
+  </div>
+
+  <div class="card">
+    <h3>10. openrouter / ernie-5.5-flash-preview:free</h3>
+    <p class="meta">spec: openrouter/baidu/ernie-5.5-flash-preview:free#high · 18,865 bytes · 40s (fastest) · all checks pass</p>
+    <a class="open" href="openrouter-ernie-5.5-flash-preview-free/">Open build →</a>
+  </div>
+
+  <div class="card">
+    <h3>11. openrouter / lfm-3-1.7b:free</h3>
+    <p class="meta">spec: openrouter/liquid/lfm-3-1.7b:free (plain — #high variant rejected) · 3,169 bytes · 295s</p>
+    <p class="note">Failed output: the file is truncated — CSS only, no page content at all. Published as-is so the failure is visible.</p>
+    <a class="open" href="openrouter-lfm-3-1.7b-free/">Open build →</a>
+  </div>
+
+  <div class="card">
+    <h3>12. openrouter / nemotron-3-nano-omni-30b:free</h3>
+    <p class="meta">spec: openrouter/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free#high · 9,094 bytes · 142s · all checks pass · smallest complete build</p>
+    <a class="open" href="openrouter-nemotron-3-nano-omni-free/">Open build →</a>
+  </div>
+
+  <div class="card">
+    <h3>13. openrouter / nemotron-3-ultra-550b:free</h3>
+    <p class="meta">spec: openrouter/nvidia/nemotron-3-ultra-550b-a55b:free#high · 29,890 bytes · 391s · file complete and verified, 13 SVG diagrams</p>
+    <p class="note">The build process exited with an error at the end (OpenRouter daily free quota hit) — but the file was already written in full and passes all checks.</p>
+    <a class="open" href="openrouter-nemotron-3-ultra-550b-free/">Open build →</a>
+  </div>
+
+  <h2>Failed — no output (8)</h2>
+  <p class="sub">These produced no usable file. Worth one retry after the OpenRouter daily quota resets.</p>
+  <ul class="fail">
+    <li><span class="mono">openrouter/google/gemma-4-26b-a4b-it:free</span> — provider error after 11 retries (not a quota message).</li>
+    <li><span class="mono">openrouter/google/gemma-4-31b-it:free</span> — provider error after 11 retries (not a quota message).</li>
+    <li><span class="mono">openrouter/inclusionai/ling-3.2-flash:free</span> — provider error after 11 retries (not a quota message).</li>
+    <li><span class="mono">openrouter/nvidia/nemotron-3.5-lightning:free</span> — OpenRouter free daily quota exhausted.</li>
+    <li><span class="mono">openrouter/nvidia/nemotron-3.5-super-vl:free</span> — OpenRouter free daily quota exhausted.</li>
+    <li><span class="mono">openrouter/openrouter/free</span> — OpenRouter free daily quota exhausted.</li>
+    <li><span class="mono">openrouter/particle-ai/particle-1:free</span> — OpenRouter free daily quota exhausted.</li>
+    <li><span class="mono">openrouter/recursive/flint-v1.0:free</span> — OpenRouter free daily quota exhausted.</li>
+  </ul>
+
+  <footer>
+    <p>Built with opencode v2.3.0 on a VPS from one shared brief. Verification: HTML structure, all required facts and links, no phone number, no UNJ, no placeholder text. Frontier models (e.g. Claude Sonnet 5.5) were excluded: they are pay-as-you-go on OpenCode credits, and the account balance is insufficient.</p>
+  </footer>
+</div>
+</body>
+</html>
